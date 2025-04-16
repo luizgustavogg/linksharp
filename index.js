@@ -89,4 +89,8 @@ App.get('/:shortCode', async (req, res) => {
     res.redirect(urlShort.urlOriginal)
 })
 
+App.get('', (req, res) => {
+    res.status(200).send("Backend Funcionando!").end()
+})
+
 App.listen(3000)
