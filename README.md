@@ -1,7 +1,6 @@
 # 🔗 Encurtador de Links — Projeto Node.js + Prisma
 
 Bem-vindo ao **Encurtador de Links**, um projeto simples, direto e funcional, desenvolvido para transformar URLs longas em links curtos e fáceis de compartilhar!  
-Ideal para estudos, portfólio ou como base para evoluções futuras.
 
 ---
 
