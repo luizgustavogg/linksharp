@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="input-box">
+    <h2>Coloque o seu link para encurtar!</h2>
+    <form class="input-form" (submit)="clickCreateLink($event)">
+      <div class="input-group">
+        <input type="text" name="link" placeholder="Link Original" [(ngModel)]="urlOriginal"/>
+        <input type="text" name="code" placeholder="Código do encurtador" [(ngModel)]="shortCode"/>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="showPopup" class="popup-overlay" (click)="closePopup()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <h2>{{ popupMessage }}</h2>
+    <p (click)="copyToClipboard(popupMessageLink)" title="Clique para copiar" style="cursor:pointer;">{{ popupMessageLink }}</p>
+    <button (click)="closePopup()">Fechar</button>
+  </div>
+</div>
+
+<!-- Toast de confirmação da cópia -->
+<div *ngIf="showToast" class="toast">
+  Copiado para a área de transferência!
+</div>
+
+
+<!-- Pop-up de erro -->
+<div *ngIf="showErrorPopup" class="popup-overlay" (click)="closeErrorPopup()">
+  <div class="popup-content error" (click)="$event.stopPropagation()">
+    <p>{{ errorMessage }}</p>
+    <button (click)="closeErrorPopup()">Fechar</button>
+  </div>
+</div>
